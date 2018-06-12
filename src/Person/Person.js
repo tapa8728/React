@@ -5,8 +5,9 @@ import React from 'react';
 
 const Person = (props) => {
 	return (
-		<p> I am {props.name} and I am {props.age} years old. </p>
-	);
-}
+		<p> I am {props.name} and I am {props.age} years old. 
+		 {props.children} </p>
+	)
+};
 
 export default Person
