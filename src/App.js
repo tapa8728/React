@@ -10,6 +10,8 @@
 
 // the component shown below is a class-based components (also referred to as "containers", "smart" or "stateful" components
 
+// By callin <Person> component again and again, we are basically re-using it. 
+
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -21,6 +23,10 @@ class App extends Component {
       <div className="App">
         <h1> I am react app </h1>
         <p> this is really working</p>
+        <Person />
+        <Person />
+        <Person />
+        <Person />
         <Person />
       </div>
     );
