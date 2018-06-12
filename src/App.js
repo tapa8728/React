@@ -8,7 +8,7 @@
 // hence we dont prefer the createElement as it get cumbersome when we add more children elements. 
 // the embedded HTML is actually JS.  
 
-// while importing another component, 
+// the component shown below is a class-based components (also referred to as "containers", "smart" or "stateful" components
 
 import React, { Component } from 'react';
 import logo from './logo.svg';
