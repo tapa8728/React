@@ -23,11 +23,10 @@ class App extends Component {
       <div className="App">
         <h1> I am react app </h1>
         <p> this is really working</p>
-        <Person />
-        <Person />
-        <Person />
-        <Person />
-        <Person />
+        <Person name="Tanvi" age="27" />
+        <Person name="Reema" age="22"> My sister </Person>
+        <Person name="Rina" age="25" />
+
       </div>
     );
 
