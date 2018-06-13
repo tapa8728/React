@@ -41,13 +41,13 @@ class App extends Component {
   }
 
   // bind will pass the argument list 
-  switchEventHandler = (newName) => {
+  switchEventHandler = (newName1, newName2) => {
       //console.log("Button was clicked");
       // this.state.persons[0].name = "tipsy"; .. dont do this. there wont be a DOM re-render
       this.setState({
         persons: [
-          { name: newName, age: 28},
-          { name: 'Reema', age: 22 },
+          { name: newName1, age: 28},
+          { name: newName2, age: 22 },
           { name: 'Rina', age: 45 }
         ]
       });
@@ -58,7 +58,7 @@ class App extends Component {
       <div className="App">
         <h1> I am react app </h1>
         <p> this is really working</p>
-        <button onClick={this.switchEventHandler.bind(this, 'Tipsy')}> Switch Name </button>
+        <button onClick={this.switchEventHandler.bind(this, 'Tipsy', 'Pie')}> Switch Name </button>
         <Person 
           name={this.state.persons[0].name} 
           age={this.state.persons[0].age} />
@@ -66,7 +66,7 @@ class App extends Component {
         <Person 
           name={this.state.persons[1].name} 
           age={this.state.persons[1].age}
-          click={this.switchEventHandler.bind(this, 'Tipsy  !!')}
+          click={this.switchEventHandler.bind(this, 'Tipsy !!', 'Nator')}
           > My sister </Person>
         
         <Person 
