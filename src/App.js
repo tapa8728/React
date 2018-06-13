@@ -53,6 +53,17 @@ class App extends Component {
       });
   }
 
+  // change something on live input. OnChange event handler.
+  nameChangeHandler = (event) => {
+    this.setState({
+      persons: [
+        { name: event.target.value, age: 28 },
+        { name: 'Reema', age: 22 },
+        { name: 'Rina', age: 30 }
+      ]
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -61,7 +72,8 @@ class App extends Component {
         <button onClick={this.switchEventHandler.bind(this, 'Tipsy', 'Pie')}> Switch Name </button>
         <Person 
           name={this.state.persons[0].name} 
-          age={this.state.persons[0].age} />
+          age={this.state.persons[0].age} 
+          changed={this.nameChangeHandler}/>
  
         <Person 
           name={this.state.persons[1].name} 
