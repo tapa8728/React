@@ -10,7 +10,16 @@
 
 // the component shown below is a class-based components (also referred to as "containers", "smart" or "stateful" components
 
-// By callin <Person> component again and again, we are basically re-using it. 
+// By callin <Person> component again and again, we are basically re-using it.
+
+// whats so special about the "state"  -- tf the value in state changes, it will cause react to re-render the DOM.. or update the DOM
+
+ /*
+  Whilst props allow you to pass data down the component tree (and hence trigger an UI update), 
+  state is used to change the component, well, state from within. Changes to state also trigger an UI update.
+*/
+
+
 
 import React, { Component } from 'react';
 import logo from './logo.svg';
@@ -26,12 +35,16 @@ class App extends Component {
     ]
   }
 
+  switchEventHandler = () => {
+      console.log("Button was clicked")
+  }
 
   render() {
     return (
       <div className="App">
         <h1> I am react app </h1>
         <p> this is really working</p>
+        <button onClick={this.switchEventHandler}> Switch Name </button>
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
         <Person name={this.state.persons[1].name} age={this.state.persons[1].age}> My sister </Person>
         <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
