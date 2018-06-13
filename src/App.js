@@ -21,6 +21,9 @@
 
 // onClick is just one type of event. For more event types - https://reactjs.org/docs/events.html#supported-events
 
+// make a component call a function by passing a function as a property for it. here we are passing switchEventHandler
+// as a prop with name "click" for person component. 
+
 
 
 import React, { Component } from 'react';
@@ -59,11 +62,11 @@ class App extends Component {
         <Person 
           name={this.state.persons[0].name} 
           age={this.state.persons[0].age} />
-
+ 
         <Person 
           name={this.state.persons[1].name} 
           age={this.state.persons[1].age}
-          click={this.switchEventHandler.bind(this, 'Booya')}
+          click={this.switchEventHandler.bind(this, 'Tipsy  !!')}
           > My sister </Person>
         
         <Person 
