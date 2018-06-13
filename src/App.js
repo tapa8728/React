@@ -19,6 +19,8 @@
   state is used to change the component, well, state from within. Changes to state also trigger an UI update.
 */
 
+// onClick is just one type of event. For more event types - https://reactjs.org/docs/events.html#supported-events
+
 
 
 import React, { Component } from 'react';
@@ -35,8 +37,17 @@ class App extends Component {
     ]
   }
 
-  switchEventHandler = () => {
-      console.log("Button was clicked")
+  // bind will pass the argument list 
+  switchEventHandler = (newName) => {
+      //console.log("Button was clicked");
+      // this.state.persons[0].name = "tipsy"; .. dont do this. there wont be a DOM re-render
+      this.setState({
+        persons: [
+          { name: newName, age: 28},
+          { name: 'Reema', age: 22 },
+          { name: 'Rina', age: 45 }
+        ]
+      });
   }
 
   render() {
@@ -44,11 +55,21 @@ class App extends Component {
       <div className="App">
         <h1> I am react app </h1>
         <p> this is really working</p>
-        <button onClick={this.switchEventHandler}> Switch Name </button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}> My sister </Person>
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
+        <button onClick={this.switchEventHandler.bind(this, 'Tipsy')}> Switch Name </button>
+        <Person 
+          name={this.state.persons[0].name} 
+          age={this.state.persons[0].age} />
 
+        <Person 
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age}
+          click={this.switchEventHandler.bind(this, 'Booya')}
+          > My sister </Person>
+        
+        <Person 
+          name={this.state.persons[2].name} 
+          age={this.state.persons[2].age} 
+           />
       </div>
     );
 
