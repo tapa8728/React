@@ -78,8 +78,14 @@ class App extends Component {
     this.setState({toShow: !doesShow});
   }
 
+
+  // Since we are directly modifying the state, a lot could go wrong.
+  // so instead we can slice or spread the values in a list and then delete them. 
+  // always update the state in an immutable fashion. create a copy, modify it and then update the state. 
+  // dont perfrom the operation directly on the state. 
   deletePersonHandler = (prsn_index) => {
-    const persons_copy = this.state.persons;
+    //const persons_copy = this.state.persons.slice();  
+    const persons_copy = [...this.state.persons]; // spread operator.
     persons_copy.splice(prsn_index, 1); // delete that index from the state
     this.setState({persons: persons_copy}); //update the state
   }
