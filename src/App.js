@@ -24,6 +24,8 @@
 // make a component call a function by passing a function as a property for it. here we are passing switchEventHandler
 // as a prop with name "click" for person component. 
 
+// Everything in the render() function will will be excecuted
+
 
 
 import React, { Component } from 'react';
@@ -87,16 +89,9 @@ class App extends Component {
       cursor: 'pointer'
     };
 
-    return (
-      <div className="App">
-        <h1> I am react app </h1>
-        <p> this is really working</p>
-        <button 
-          style={buttonStyle}
-          onClick={this.toggleNamesHandler}>
-         Toggle Name </button>
-
-        { this.state.toShow === true ?
+    let persons = null;   // persons will hold the jsx code that needs to be rendered. 
+    if (this.state.toShow) {
+      persons = (
           <div>
             <Person 
               name={this.state.persons[0].name} 
@@ -113,7 +108,23 @@ class App extends Component {
               name={this.state.persons[2].name} 
               age={this.state.persons[2].age} 
             />
-          </div> : null }
+        </div> 
+        );
+    }
+
+    
+
+
+    return (
+      <div className="App">
+        <h1> I am react app </h1>
+        <p> this is really working</p>
+        <button 
+          style={buttonStyle}
+          onClick={this.toggleNamesHandler}>
+         Toggle Name </button>
+         {persons}
+        
       </div>
     );
 
