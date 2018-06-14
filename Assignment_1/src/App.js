@@ -37,7 +37,7 @@ class App extends Component {
         <p> Creating 2 new components by myself. Im excited. Lets go</p>
 
         <UserOutput username={this.state.UserOutput[0].username} event={this.usernameEventHandler.bind(this, "TipsyNator")}/>
-        <UserInput changed={this.changeHandler}/>
+        <UserInput changed={this.changeHandler} orig={this.state.UserOutput[0].username}/>
 
 
         <ol>
