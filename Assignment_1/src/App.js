@@ -10,10 +10,10 @@ class App extends Component {
 
         <p> Creating 2 new components by myself. Im excited. Lets go</p>
 
-        <UserOutput />
+        <UserOutput username="tipsy"/>
         <UserInput />
 
-        
+
         <ol>
           <li>Create TWO new components: UserInput and UserOutput</li>
           <li>UserInput should hold an input element, UserOutput two paragraphs</li>
