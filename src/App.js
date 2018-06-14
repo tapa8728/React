@@ -34,11 +34,12 @@ import './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
+  // 'id' stands for the key property while rendering a react component
   state = {
     persons: [
-      { name: 'Tanvi', age: 28 },
-      { name: 'Reema', age: 22 },
-      { name: 'Rina', age: 30 }
+      { id: "n1", name: 'Tanvi', age: 28 },
+      { id: "n2", name: 'Reema', age: 22 },
+      { id: "n3", name: 'Rina', age: 30 }
     ], 
     someState: 'other state info', 
     toShow: false
@@ -110,7 +111,8 @@ class App extends Component {
                   return <Person 
                     click={this.deletePersonHandler.bind(this, index)}
                     name={prsn.name} 
-                    age={prsn.age} />
+                    age={prsn.age} 
+                    key={prsn.id}/>
                 })
             }
           </div> 
