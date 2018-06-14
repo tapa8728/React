@@ -93,26 +93,30 @@ class App extends Component {
     if (this.state.toShow) {
       persons = (
           <div>
-            <Person 
-              name={this.state.persons[0].name} 
-              age={this.state.persons[0].age} 
-              changed={this.nameChangeHandler}/>
-     
-            <Person 
-              name={this.state.persons[1].name} 
-              age={this.state.persons[1].age}
-              click={this.switchEventHandler.bind(this, 'Tipsy !!', 'Nator')}
-              > My sister </Person>
-            
-            <Person 
-              name={this.state.persons[2].name} 
-              age={this.state.persons[2].age} 
-            />
-        </div> 
+            { // direct JSX .. looping over state which contains values.. outputing HTML/JSX
+                this.state.persons.map(prsn => {
+                  return <Person name={prsn.name} age={prsn.age} />
+                })
+            }
+          </div> 
         );
     }
 
-    
+    // <Person 
+    //           name={this.state.persons[0].name} 
+    //           age={this.state.persons[0].age} 
+    //           changed={this.nameChangeHandler}/>
+     
+    //         <Person 
+    //           name={this.state.persons[1].name} 
+    //           age={this.state.persons[1].age}
+    //           click={this.switchEventHandler.bind(this, 'Tipsy !!', 'Nator')}
+    //           > My sister </Person>
+            
+    //         <Person 
+    //           name={this.state.persons[2].name} 
+    //           age={this.state.persons[2].age} 
+    //         />
 
 
     return (
