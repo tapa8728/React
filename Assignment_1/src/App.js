@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import UserOutput from './UserOutput/UserOutput'
+import UserInput from './UserInput/UserInput'
 
 class App extends Component {
   render() {
@@ -10,6 +11,8 @@ class App extends Component {
         <p> Creating 2 new components by myself. Im excited. Lets go</p>
 
         <UserOutput />
+        <UserInput />
+
         
         <ol>
           <li>Create TWO new components: UserInput and UserOutput</li>
