@@ -65,8 +65,8 @@ class App extends Component {
     });
   }
 
+  // Render only throws out JSX. All function, state, variables should be defined before the render. 
   render() {
-
     // inline button styling
     const buttonStyle = {
       backgroundColor: 'white',

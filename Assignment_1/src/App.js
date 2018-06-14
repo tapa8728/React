@@ -11,13 +11,23 @@ class App extends Component {
       ]
     }
 
+  usernameEventHandler = (newName) => {
+    this.setState({
+      UserOutput:[
+        { username : newName}
+      ]
+    });
+
+    
+  }
+
   render() {
     return (
       <div className="App">
 
         <p> Creating 2 new components by myself. Im excited. Lets go</p>
 
-        <UserOutput username={this.state.UserOutput[0].username}/>
+        <UserOutput username={this.state.UserOutput[0].username} event={this.usernameEventHandler.bind(this, "TipsyNator")}/>
         <UserInput />
 
 
