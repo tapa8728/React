@@ -70,10 +70,14 @@ class App extends Component {
 
     // getting the person object .. with spread as we dont directly want to point to the state/ 
     const person = {... this.state.persons[personIndex]};
-    const person2 = Object.assign({}, this.state.persons[personIndex]); // another way to create a copy and not directly modify
+    // const person2 = Object.assign({}, this.state.persons[personIndex]); // another way to create a copy and not directly modify
     person.name = event.target.value;
-    // update only that object in the state
-    this.setState({ persons: person });
+
+    // updating state. Not directly of course. 
+    const stateCpy = [... this.state.persons];
+    stateCpy[personIndex] = person
+
+    this.setState({ persons: stateCpy });
   }
 
 
@@ -116,8 +120,8 @@ class App extends Component {
                     name={prsn.name} 
                     age={prsn.age} 
                     key={prsn.id}
-                    changed={(event) => this.nameChangeHandler(event, prsn.id)}/>
-                });
+                    changed={(event) => this.nameChangeHandler(event, prsn.id)} />
+                })
             }
           </div> 
         );
