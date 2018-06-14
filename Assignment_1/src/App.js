@@ -4,13 +4,20 @@ import UserOutput from './UserOutput/UserOutput'
 import UserInput from './UserInput/UserInput'
 
 class App extends Component {
+  // defining state 
+  state = {
+      UserOutput:[
+        { username : "tipsy !"}
+      ]
+    }
+
   render() {
     return (
       <div className="App">
 
         <p> Creating 2 new components by myself. Im excited. Lets go</p>
 
-        <UserOutput username="tipsy"/>
+        <UserOutput username={this.state.UserOutput[0].username}/>
         <UserInput />
 
 
