@@ -78,6 +78,12 @@ class App extends Component {
     this.setState({toShow: !doesShow});
   }
 
+  deletePersonHandler = (prsn_index) => {
+    const persons_copy = this.state.persons;
+    persons_copy.splice(prsn_index, 1); // delete that index from the state
+    this.setState({persons: persons_copy}); //update the state
+  }
+
   // Render only throws out JSX. All function, state, variables should be defined before the render. 
   render() {
     // inline button styling
@@ -94,29 +100,17 @@ class App extends Component {
       persons = (
           <div>
             { // direct JSX .. looping over state which contains values.. outputing HTML/JSX
-                this.state.persons.map(prsn => {
-                  return <Person name={prsn.name} age={prsn.age} />
+                this.state.persons.map((prsn, index) => {
+                  return <Person 
+                    click={this.deletePersonHandler.bind(this, index)}
+                    name={prsn.name} 
+                    age={prsn.age} />
                 })
             }
           </div> 
         );
     }
 
-    // <Person 
-    //           name={this.state.persons[0].name} 
-    //           age={this.state.persons[0].age} 
-    //           changed={this.nameChangeHandler}/>
-     
-    //         <Person 
-    //           name={this.state.persons[1].name} 
-    //           age={this.state.persons[1].age}
-    //           click={this.switchEventHandler.bind(this, 'Tipsy !!', 'Nator')}
-    //           > My sister </Person>
-            
-    //         <Person 
-    //           name={this.state.persons[2].name} 
-    //           age={this.state.persons[2].age} 
-    //         />
 
 
     return (
