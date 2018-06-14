@@ -5,6 +5,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
+        <p> Creating 2 new components by myself. Im excited. Lets go</p>
+
         <ol>
           <li>Create TWO new components: UserInput and UserOutput</li>
           <li>UserInput should hold an input element, UserOutput two paragraphs</li>
