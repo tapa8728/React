@@ -54,6 +54,7 @@ class App extends Component {
   }
 
   // change something on live input. OnChange event handler.
+  // dynamic updation of the DOM.
   nameChangeHandler = (event) => {
     this.setState({
       persons: [
