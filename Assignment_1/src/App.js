@@ -11,15 +11,24 @@ class App extends Component {
       ]
     }
 
+  // event click handler
   usernameEventHandler = (newName) => {
     this.setState({
       UserOutput:[
         { username : newName}
       ]
     });
-
-    
   }
+
+  //change handler
+  changeHandler = (event) => {
+    this.setState({
+      UserOutput:[
+        { username : event.target.value}
+      ]
+    });
+  }
+  
 
   render() {
     return (
@@ -28,7 +37,7 @@ class App extends Component {
         <p> Creating 2 new components by myself. Im excited. Lets go</p>
 
         <UserOutput username={this.state.UserOutput[0].username} event={this.usernameEventHandler.bind(this, "TipsyNator")}/>
-        <UserInput />
+        <UserInput changed={this.changeHandler}/>
 
 
         <ol>
