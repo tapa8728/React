@@ -62,17 +62,20 @@ class App extends Component {
 
   // change something on live input. OnChange event handler.
   // dynamic updation of the DOM.
-  nameChangeHandler = (event) => {
-    this.setState({
-      persons: [
-        { name: event.target.value, age: 28 },
-        { name: 'Reema', age: 22 },
-        { name: 'Rina', age: 30 }
-      ],
-      someState: 'other state info', 
-      toShow: false
+  nameChangeHandler = (event, id) => {
+    // personIndex will hold the index of the particular person object that needs its name changed
+    const personIndex = this.state.persons.findIndex(p => {
+        return p.id === id;
     });
+
+    // getting the person object .. with spread as we dont directly want to point to the state/ 
+    const person = {... this.state.persons[personIndex]};
+    const person2 = Object.assign({}, this.state.persons[personIndex]); // another way to create a copy and not directly modify
+    person.name = event.target.value;
+    // update only that object in the state
+    this.setState({ persons: person });
   }
+
 
   toggleNamesHandler = () => {
     const doesShow = this.state.toShow;
@@ -112,8 +115,9 @@ class App extends Component {
                     click={this.deletePersonHandler.bind(this, index)}
                     name={prsn.name} 
                     age={prsn.age} 
-                    key={prsn.id}/>
-                })
+                    key={prsn.id}
+                    changed={(event) => this.nameChangeHandler(event, prsn.id)}/>
+                });
             }
           </div> 
         );
