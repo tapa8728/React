@@ -28,8 +28,15 @@
 
 // Dynamically changing styles .. module 5
 
-// Radium is jut wrapping a component around another component and injecting features - styles. 
+/* RADIUM - package
 
+Radium is jut wrapping a component around another component and injecting features - styles. 
+Radium also helps in parsing Media queries - 
+A media query is when you want to modify the look/feel of the app based on the devices
+general type - screen res, viewport, print vs screen
+
+
+*/
 
 import React, { Component } from 'react';
 import Radium from 'radium';
