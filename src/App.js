@@ -131,12 +131,12 @@ class App extends Component {
       buttonStyle.backgroundColor = 'red';
     }
 
-
+    let classes = ['red', 'bold'].join(' ');
 
     return (
       <div className="App">
         <h1> I am react app </h1>
-        <p> this is really working</p>
+        <p className={classes}> this is really working</p>
         <button 
           style={buttonStyle}
           onClick={this.toggleNamesHandler}>
