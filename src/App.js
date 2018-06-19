@@ -26,6 +26,8 @@
 
 // Everything in the render() function will will be excecuted
 
+// Dynamically changing styles .. module 5
+
 
 
 import React, { Component } from 'react';
@@ -102,7 +104,8 @@ class App extends Component {
   render() {
     // inline button styling
     const buttonStyle = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -125,6 +128,7 @@ class App extends Component {
             }
           </div> 
         );
+      buttonStyle.backgroundColor = 'red';
     }
 
 
