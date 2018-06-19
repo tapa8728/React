@@ -39,7 +39,7 @@ general type - screen res, viewport, print vs screen
 */
 
 import React, { Component } from 'react';
-import Radium from 'radium';
+import Radium, {StyleRoot} from 'radium';
 import './App.css';
 import Person from './Person/Person';
 
@@ -159,16 +159,18 @@ class App extends Component {
     
 
     return (
-      <div className="App">
-        <h1> I am react app </h1>
-        <p className={classes.join(' ')}> this is really working</p>
-        <button 
-          style={buttonStyle}
-          onClick={this.toggleNamesHandler}>
-         Toggle Name </button>
-         {persons}
-        
-      </div>
+      <StyleRoot>
+          <div className="App">
+            <h1> I am react app </h1>
+            <p className={classes.join(' ')}> this is really working</p>
+            <button 
+              style={buttonStyle}
+              onClick={this.toggleNamesHandler}>
+             Toggle Name </button>
+             {persons}
+            
+          </div>
+      </StyleRoot>
     );
 
     //return React.createElement('div', {className:"App"}, React.createElement('h1', null,'I am react app'));
