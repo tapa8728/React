@@ -31,7 +31,7 @@
 
 
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Radium from 'radium';
 import './App.css';
 import Person from './Person/Person';
 
