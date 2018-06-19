@@ -112,6 +112,8 @@ class App extends Component {
       cursor: 'pointer'
     };
 
+    let classes = ['red', 'bold'].join(' ');
+
     let persons = null;   // persons will hold the jsx code that needs to be rendered. 
     if (this.state.toShow) {
       persons = (
@@ -131,12 +133,12 @@ class App extends Component {
       buttonStyle.backgroundColor = 'red';
     }
 
-    let classes = ['red', 'bold'].join(' ');
+    
 
     return (
       <div className="App">
         <h1> I am react app </h1>
-        <p className={classes}> this is really working</p>
+        <p className="red bold"> this is really working</p>
         <button 
           style={buttonStyle}
           onClick={this.toggleNamesHandler}>
