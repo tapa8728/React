@@ -2,6 +2,7 @@
 
 // Adding dynamic content to the component
 import React from 'react';
+import Radium from 'radium';
 
 import './Person.css'
 
@@ -15,4 +16,4 @@ const Person = (props) => {
 	)
 };
 
-export default Person
+export default Radium(Person); 
