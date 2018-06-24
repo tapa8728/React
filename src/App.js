@@ -39,7 +39,7 @@ general type - screen res, viewport, print vs screen
 */
 
 import React, { Component } from 'react';
-import Radium, {StyleRoot} from 'radium';
+//import Radium, {StyleRoot} from 'radium';
 import './App.css';
 import Person from './Person/Person';
 
@@ -117,11 +117,7 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer',
-      ':hover':{
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+      cursor: 'pointer'
     };
 
     //let classes = ['red', 'bold'].join(' ');
@@ -150,16 +146,12 @@ class App extends Component {
           </div> 
         );
       buttonStyle.backgroundColor = 'red';
-      buttonStyle[':hover'] = {
-         backgroundColor: 'pink',
-         color: 'black'
-      }
+      
     }
 
     
 
     return (
-      <StyleRoot>
           <div className="App">
             <h1> I am react app </h1>
             <p className={classes.join(' ')}> this is really working</p>
@@ -170,11 +162,13 @@ class App extends Component {
              {persons}
             
           </div>
-      </StyleRoot>
     );
 
     //return React.createElement('div', {className:"App"}, React.createElement('h1', null,'I am react app'));
   }
 }
 
-export default Radium(App);
+export default App;
+
+
+
