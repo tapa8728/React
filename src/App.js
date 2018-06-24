@@ -43,6 +43,7 @@ import React, { Component } from 'react';
 //import Radium, {StyleRoot} from 'radium';
 import classes from './App.css';
 import Person from './Person/Person';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
   // 'id' stands for the key property while rendering a react component
@@ -135,14 +136,17 @@ class App extends Component {
     if (this.state.toShow) {
       persons = (
           <div>
-            { // direct JSX .. looping over state which contains values.. outputing HTML/JSX
+            { // direct JSX .. looping over state which contains values.. outputing HTML/JSX.
+              // We move the key outside because the key always has to be on the outer component in the map method
                 this.state.persons.map((prsn, index) => {
-                  return <Person 
-                    click={this.deletePersonHandler.bind(this, index)}
-                    name={prsn.name} 
-                    age={prsn.age} 
-                    key={prsn.id}
-                    changed={(event) => this.nameChangeHandler(event, prsn.id)} />
+                  return //<ErrorBoundary key={prsn.id}>
+                    <Person 
+                      click={this.deletePersonHandler.bind(this, index)}
+                      name={prsn.name} 
+                      age={prsn.age}
+                      key={prsn.id} 
+                      changed={(event) => this.nameChangeHandler(event, prsn.id)} />
+                    //</ErrorBoundary>
                 })
             }
           </div> 
