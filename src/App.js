@@ -76,7 +76,7 @@ class App extends Component {
   nameChangeHandler = (event, id) => {
     // personIndex will hold the index of the particular person object that needs its name changed
     const personIndex = this.state.persons.findIndex(p => {
-        return p.userid === id;
+        return p.id === id;
     });
 
     // getting the person object .. with spread as we dont directly want to point to the state/ 
