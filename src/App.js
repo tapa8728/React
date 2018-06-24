@@ -76,13 +76,13 @@ class App extends Component {
   nameChangeHandler = (event, id) => {
     // personIndex will hold the index of the particular person object that needs its name changed
     const personIndex = this.state.persons.findIndex(p => {
-        return p.id === id;
+        return p.userid === id;
     });
 
     // getting the person object .. with spread as we dont directly want to point to the state/ 
     const person = {... this.state.persons[personIndex]};
     // const person2 = Object.assign({}, this.state.persons[personIndex]); // another way to create a copy and not directly modify
-    person.name = event.input.value;// event.target.value; // to get the value the user entered.
+    person.name = event.target.value; // event.target.value; --> to get the value the user entered.
 
     // updating state. Not directly of course. 
     const stateCpy = [... this.state.persons];
