@@ -41,7 +41,7 @@ using CSS modules allows us to load the CSS file as a javsxript object and hence
 
 import React, { Component } from 'react';
 //import Radium, {StyleRoot} from 'radium';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -151,9 +151,10 @@ class App extends Component {
     }
 
     
-
+    // instead of <div className="App"> .. since we used css modules, we can refer the css class as a property.
+    // the css module loader allocates a special class name to each of these css classes using - css class name, js file importing the class and a hash. this gets stored in the properties of the "classes" js object (which is essentially the css file)
     return (
-          <div className="App">
+          <div className={classes.app}>
             <h1> I am react app </h1>
             <p className={classes.join(' ')}> this is really working</p>
             <button 
