@@ -122,12 +122,13 @@ class App extends Component {
     };
 
     //let classes = ['red', 'bold'].join(' ');
-    const classes = [];
+    // no need to push strings, we can directly access the css classes from the "classes" js object
+    const assignedClasses = [];
     if (this.state.persons.length <=2){
-      classes.push("red");
+         assignedClasses.push(classes.red);   //classes.push("red");
     }
     if (this.state.persons.length <=1){
-      classes.push("bold");
+      assignedClasses.push(classes.bold);   //classes.push("bold");
     }
 
     let persons = null;   // persons will hold the jsx code that needs to be rendered. 
@@ -154,9 +155,9 @@ class App extends Component {
     // instead of <div className="App"> .. since we used css modules, we can refer the css class as a property.
     // the css module loader allocates a special class name to each of these css classes using - css class name, js file importing the class and a hash. this gets stored in the properties of the "classes" js object (which is essentially the css file)
     return (
-          <div className={classes.app}>
+          <div className = {classes.App}>
             <h1> I am react app </h1>
-            <p className={classes.join(' ')}> this is really working</p>
+            <p className={assignedClasses.join(' ')}> this is really working</p>
             <button 
               style={buttonStyle}
               onClick={this.toggleNamesHandler}>
