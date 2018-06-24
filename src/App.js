@@ -82,7 +82,7 @@ class App extends Component {
     // getting the person object .. with spread as we dont directly want to point to the state/ 
     const person = {... this.state.persons[personIndex]};
     // const person2 = Object.assign({}, this.state.persons[personIndex]); // another way to create a copy and not directly modify
-    person.name = event.target.value;
+    person.name = event.input.value;// event.target.value; // to get the value the user entered.
 
     // updating state. Not directly of course. 
     const stateCpy = [... this.state.persons];
@@ -155,7 +155,7 @@ class App extends Component {
     // instead of <div className="App"> .. since we used css modules, we can refer the css class as a property.
     // the css module loader allocates a special class name to each of these css classes using - css class name, js file importing the class and a hash. this gets stored in the properties of the "classes" js object (which is essentially the css file)
     return (
-          <div className = {classes.App}>
+          <div className = "App">
             <h1> I am react app </h1>
             <p className={assignedClasses.join(' ')}> this is really working</p>
             <button 

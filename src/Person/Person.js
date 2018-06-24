@@ -2,9 +2,9 @@
 
 // Adding dynamic content to the component
 import React from 'react';
-import Radium, {StyleRoot} from 'radium';
+//import Radium, {StyleRoot} from 'radium';
 
-import './Person.css'
+import classes from './Person.css'
 
 const Person = (props) => {
 
