@@ -35,6 +35,7 @@ Radium also helps in parsing Media queries -
 A media query is when you want to modify the look/feel of the app based on the devices
 general type - screen res, viewport, print vs screen
 
+using CSS modules allows us to load the CSS file as a javsxript object and hence access all the classes as properties our javascript file.
 
 */
 
@@ -169,6 +170,4 @@ class App extends Component {
 }
 
 export default App;
-
-
 
