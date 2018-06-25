@@ -36,8 +36,8 @@ A media query is when you want to modify the look/feel of the app based on the d
 general type - screen res, viewport, print vs screen
 
 using CSS modules allows us to load the CSS file as a javsxript object and hence access all the classes as properties our javascript file.
-
 */
+// to implement component lifecycle methods, you need access to a stateful component. 
 
 import React, { Component } from 'react';
 //import Radium, {StyleRoot} from 'radium';
