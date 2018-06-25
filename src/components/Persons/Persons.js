@@ -35,7 +35,4 @@ const persons = (props) => props.persons.map((prsn, index) => {
          });
 
  export default persons;
-
-
-
  */
