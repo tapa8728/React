@@ -43,7 +43,11 @@ import React, { Component } from 'react';
 //import Radium, {StyleRoot} from 'radium';
 import classes from './App.css';
 import Persons from './components/Persons/Persons';
+import Cockpit from './components/Cockpit/Cockpit';
+
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+
+
 
 class App extends Component {
   // 'id' stands for the key property while rendering a react component
@@ -151,13 +155,11 @@ class App extends Component {
     // the css module loader allocates a special class name to each of these css classes using - css class name, js file importing the class and a hash. this gets stored in the properties of the "classes" js object (which is essentially the css file)
     return (
           <div className = "App">
-              <h1> I am react app </h1>
-              <p className={assignedClasses.join(' ')}> this is really working</p>
-              <button 
-                style={buttonStyle}
-                onClick={this.toggleNamesHandler}>
-               Toggle Name </button>
-               {persons}
+              <Cockpit 
+                ac = {this.assignedClasses}
+                btnStyle = {this.buttonStyle}
+                clicked = {this.toggleNamesHandler} />
+              {persons}
           </div>
     );
 
