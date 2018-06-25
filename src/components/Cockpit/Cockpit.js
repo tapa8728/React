@@ -4,7 +4,8 @@ const cockpit = (props) => {
 
 	return (
 		<div>
-			<h1> I am react app </h1>
+			<h1>{props.title}</h1>
+			<h2> I am react app </h2>
 			<p className={props.ac.join(' ')}> this is really working</p>
 			<button 
 				style={props.btnStyle}
