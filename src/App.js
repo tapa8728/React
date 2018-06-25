@@ -128,7 +128,7 @@ class App extends Component {
     if (this.state.persons.length <=2){
          assignedClasses.push(classes.red);   //classes.push("red");
     }
-    if (this.state.persons.length <=1){
+    if (this.state.persons.length <=1){ 
       assignedClasses.push(classes.bold);   //classes.push("bold");
     }
 
@@ -136,7 +136,7 @@ class App extends Component {
     if (this.state.toShow) {
       persons = (
           <div>
-            <Persons 
+            <Persons  // super component
                 persons={this.state.persons}  // passing the persons array
                 clicked={this.deletePersonHandler} 
                 changed={this.nameChangeHandler} />
@@ -151,14 +151,13 @@ class App extends Component {
     // the css module loader allocates a special class name to each of these css classes using - css class name, js file importing the class and a hash. this gets stored in the properties of the "classes" js object (which is essentially the css file)
     return (
           <div className = "App">
-            <h1> I am react app </h1>
-            <p className={assignedClasses.join(' ')}> this is really working</p>
-            <button 
-              style={buttonStyle}
-              onClick={this.toggleNamesHandler}>
-             Toggle Name </button>
-             {persons}
-            
+              <h1> I am react app </h1>
+              <p className={assignedClasses.join(' ')}> this is really working</p>
+              <button 
+                style={buttonStyle}
+                onClick={this.toggleNamesHandler}>
+               Toggle Name </button>
+               {persons}
           </div>
     );
 
