@@ -156,8 +156,8 @@ class App extends Component {
     return (
           <div className = "App">
               <Cockpit 
-                ac = {this.assignedClasses}
-                btnStyle = {this.buttonStyle}
+                ac = {assignedClasses}
+                btnStyle = {buttonStyle}
                 clicked = {this.toggleNamesHandler} />
               {persons}
           </div>
