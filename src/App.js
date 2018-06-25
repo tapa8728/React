@@ -42,7 +42,7 @@ using CSS modules allows us to load the CSS file as a javsxript object and hence
 import React, { Component } from 'react';
 //import Radium, {StyleRoot} from 'radium';
 import classes from './App.css';
-import Person from './Person/Person';
+import Persons from '../components/Persons/Person';
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
@@ -136,18 +136,22 @@ class App extends Component {
     if (this.state.toShow) {
       persons = (
           <div>
-            { // direct JSX .. looping over state which contains values.. outputing HTML/JSX.
-              // We move the key outside because the key always has to be on the outer component in the map method
-                this.state.persons.map((prsn, index) => {
-                  return //<ErrorBoundary key={prsn.id}>
-                    <Person 
-                      click={this.deletePersonHandler.bind(this, index)}
-                      name={prsn.name} 
-                      age={prsn.age}
-                      key={prsn.id} 
-                      changed={(event) => this.nameChangeHandler(event, prsn.id)} />
-                    //</ErrorBoundary>
-                })
+            <Persons persons={this.state.persons}
+
+
+
+            {// direct JSX .. looping over state which contains values.. outputing HTML/JSX.
+            // We move the key outside because the key always has to be on the outer component in the map method
+              this.state.persons.map((prsn, index) => {
+                return //<ErrorBoundary key={prsn.id}>
+                  <Person 
+                    click={this.deletePersonHandler.bind(this, index)}
+                    name={prsn.name} 
+                    age={prsn.age}
+                    key={prsn.id} 
+                    changed={(event) => this.nameChangeHandler(event, prsn.id)} />
+                  //</ErrorBoundary>
+              })
             }
           </div> 
         );
