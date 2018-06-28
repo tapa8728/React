@@ -29,8 +29,17 @@ class Persons extends Component {
 	// but if this return false --> state will not update and component wont render
 	// if false -- none of the eventhandlers that are looking to change the state of the component will work. 
 	shouldComponentUpdate(nextProps, nextState){
-		console.log("[UPDATE Persons.js] Inside shouldComponentUpdate ");
-		return false; //true;
+		console.log("[UPDATE Persons.js] Inside shouldComponentUpdate ", nextProps, nextState);
+		return true; //true;
+	}
+
+	componentWillUpdate(nextProps, nextState){
+		console.log("[UPDATE Persons.js] Inside componentWillUpdate ", nextProps, nextState);
+	}
+
+	componentDidUpdate(){
+		console.log("[UPDATE Persons.js] Inside componentDidUpdate ");
+
 	}
 
 	render(){
