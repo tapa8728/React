@@ -79,7 +79,12 @@ class App extends Component {
   // no need for componentWillRecieveProps() here because this is internal state change triggered updated
   shouldComponentUpdate(nextProps, nextState){
     console.log("[UPDATE App.js] Inside shouldComponentUpdate ", nextProps, nextState);
-    return true; //true;
+    //return true; //true;
+    // we can check which props changed and only render the component if a prop changed. 
+    // if we simply return true .. then "show persons" button will re-render the components agagin and again and you will see all the lifecylce methods.
+    return nextProps.persons !== this.props.persons ||
+          nextProps.changed !== this.props.changed ||
+          nextProps.clicked !== this.props.clicked;
   }
 
   componentWillUpdate(nextProps, nextState){
