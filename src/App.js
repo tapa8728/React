@@ -37,7 +37,9 @@ general type - screen res, viewport, print vs screen
 
 using CSS modules allows us to load the CSS file as a javsxript object and hence access all the classes as properties our javascript file.
 */
-// to implement component lifecycle methods, you need access to a stateful component. 
+// to implement component lifecycle methods, you need access to a stateful (class .. that maintains state var) component. 
+
+// Lifecycle Hooks - Constructor, componentWillMount
 
 import React, { Component } from 'react';
 //import Radium, {StyleRoot} from 'radium';
@@ -54,9 +56,15 @@ class App extends Component {
   constructor(props){
     super(props); //you have to add super 
     console.log("[App.js] Inside Constructor ", props);
+    // you can initialize the state in here if you want to. 
+    //this.state = ....
+
   }
 
-
+  // gets executed after constructor. 
+  componentWillMount(){
+    console.log("[App.js] Inside Constructor ");
+  }
 
   // 'id' stands for the key property while rendering a react component
   state = {
