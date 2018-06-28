@@ -46,6 +46,9 @@ using CSS modules allows us to load the CSS file as a javsxript object and hence
    the parent updates the props because of which, if you link the state to the props the component will re-render
 */
 
+// PureComponent :  this class of components already has a check built in to re-render the component on updation only and only if any of the props have changed. 
+// this way you dont need to write checks for each and every key in the props manually
+
 import React, { Component } from 'react';
 //import Radium, {StyleRoot} from 'radium';
 import classes from './App.css';
