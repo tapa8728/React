@@ -39,7 +39,7 @@ using CSS modules allows us to load the CSS file as a javsxript object and hence
 */
 // to implement component lifecycle methods, you need access to a stateful (class .. that maintains state var) component. 
 
-// Lifecycle Hooks - Constructor, componentWillMount
+// Lifecycle Hooks order of call - Constructor, componentWillMount, render, componentDidMount
 
 import React, { Component } from 'react';
 //import Radium, {StyleRoot} from 'radium';
@@ -63,7 +63,12 @@ class App extends Component {
 
   // gets executed after constructor. 
   componentWillMount(){
-    console.log("[App.js] Inside Constructor ");
+    console.log("[App.js] Inside componentWillMount ");
+  }
+
+  // gets executed after render. 
+  componentDidMount(){
+    console.log("[App.js] Inside componentDidMount ");
   }
 
   // 'id' stands for the key property while rendering a react component
@@ -131,7 +136,10 @@ class App extends Component {
   }
 
   // Render only throws out JSX. All function, state, variables should be defined before the render. 
+  // gets called after ComponentWillMount
   render() {
+      console.log("[App.js] Inside Render");
+
     // inline button styling
     const buttonStyle = {
       backgroundColor: 'green',
