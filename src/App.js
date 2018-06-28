@@ -49,7 +49,7 @@ using CSS modules allows us to load the CSS file as a javsxript object and hence
 // PureComponent :  this class of components already has a check built in to re-render the component on updation only and only if any of the props have changed. 
 // this way you dont need to write checks for each and every key in the props manually
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 //import Radium, {StyleRoot} from 'radium';
 import classes from './App.css';
 import Persons from './components/Persons/Persons';
@@ -59,7 +59,7 @@ import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 
 
-class App extends Component {
+class App extends PureComponent {
   // adding the constructor - which gets called by defualt
   constructor(props){
     super(props); //you have to add super 
@@ -79,7 +79,10 @@ class App extends Component {
     console.log("[App.js] Inside componentDidMount ");
   }
 
+  // no need to write this function if you are inheriting PureComponent
   // no need for componentWillRecieveProps() here because this is internal state change triggered updated
+  /*
+
   shouldComponentUpdate(nextProps, nextState){
     console.log("[UPDATE App.js] Inside shouldComponentUpdate ", nextProps, nextState);
     //return true; //true;
@@ -88,7 +91,8 @@ class App extends Component {
     return nextProps.persons !== this.props.persons ||
           nextProps.changed !== this.props.changed ||
           nextProps.clicked !== this.props.clicked;
-  }
+          
+  }*/
 
   componentWillUpdate(nextProps, nextState){
     console.log("[UPDATE App.js] Inside componentWillUpdate ", nextProps, nextState);
