@@ -159,7 +159,7 @@ class App extends Component {
   // Render only throws out JSX. All function, state, variables should be defined before the render. 
   // gets called after ComponentWillMount
   render() {
-      console.log("[App.js] Inside Render");
+    console.log("[App.js] Inside Render");
 
     // inline button styling
     const buttonStyle = {
@@ -200,6 +200,7 @@ class App extends Component {
     // the css module loader allocates a special class name to each of these css classes using - css class name, js file importing the class and a hash. this gets stored in the properties of the "classes" js object (which is essentially the css file)
     return (
           <div className = "App">
+              <button onClick ={() => {this.setState({toShow: true})}}> Show Persons </button>
               <Cockpit 
                 title = {this.props.title}
                 ac = {assignedClasses}
