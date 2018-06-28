@@ -50,9 +50,10 @@ import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 
 class App extends Component {
-  // adding the constructor
+  // adding the constructor - which gets called by defualt
   constructor(props){
-    super(props)
+    super(props); //you have to add super 
+    console.log("[App.js] Inside Constructor ", props);
   }
 
 
