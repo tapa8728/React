@@ -27,9 +27,10 @@ class Persons extends Component {
 
 	// if this fucntion returns True --> the state will update and the component will re-render
 	// but if this return false --> state will not update and component wont render
+	// if false -- none of the eventhandlers that are looking to change the state of the component will work. 
 	shouldComponentUpdate(nextProps, nextState){
 		console.log("[UPDATE Persons.js] Inside shouldComponentUpdate ");
-		return true
+		return false; //true;
 	}
 
 	render(){
