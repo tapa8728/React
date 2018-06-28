@@ -8,17 +8,22 @@ class Persons extends Component {
 	constructor(props){
 	    super(props); //you have to add super 
 	    console.log("[Persons.js] Inside Constructor ", props);
-	  }
+	}
 
 	  // gets executed after constructor. 
-	  componentWillMount(){
-	    console.log("[Persons.js] Inside componentWillMount ");
-	  }
+	componentWillMount(){
+		console.log("[Persons.js] Inside componentWillMount ");
+	}
 
-	  // gets executed after render. 
-	  componentDidMount(){
-	    console.log("[Persons.js] Inside componentDidMount ");
-	  }
+	// gets executed after render. 
+	componentDidMount(){
+		console.log("[Persons.js] Inside componentDidMount ");
+	}
+
+	//Update: Parent Triggered -- 1st Method
+	componentWillRecieveProps(nextProps) {
+		console.log("[UPDATE Persons.js] Inside componentWillRecieveProps ");
+	}
 
 	render(){
 		console.log("[Persons.js] Inside render() ");
