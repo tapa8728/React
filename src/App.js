@@ -50,6 +50,13 @@ import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 
 class App extends Component {
+  // adding the constructor
+  constructor(props){
+    super(props)
+  }
+
+
+
   // 'id' stands for the key property while rendering a react component
   state = {
     persons: [
