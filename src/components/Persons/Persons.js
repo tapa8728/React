@@ -21,8 +21,8 @@ class Persons extends Component {
 	}
 
 	//Update: Parent Triggered -- 1st Method
-	componentWillRecieveProps(nextProps) {
-		console.log("[UPDATE Persons.js] Inside componentWillRecieveProps ");
+	componentWillReceiveProps(nextProps) {
+		console.log("[UPDATE Persons.js] Inside componentWillReceiveProps ");
 	}
 
 	render(){
