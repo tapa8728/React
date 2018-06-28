@@ -25,6 +25,13 @@ class Persons extends Component {
 		console.log("[UPDATE Persons.js] Inside componentWillReceiveProps ");
 	}
 
+	// if this fucntion returns True --> the state will update and the component will re-render
+	// but if this return false --> state will not update and component wont render
+	shouldComponentUpdate(nextProps, nextState){
+		console.log("[UPDATE Persons.js] Inside shouldComponentUpdate ");
+		return true
+	}
+
 	render(){
 		console.log("[Persons.js] Inside render() ");
 		return this.props.persons.map((prsn, index) => { 
