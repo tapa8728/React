@@ -1,9 +1,9 @@
 // this is the isolated component for the Persons Array 
 
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import Person from '../Person/Person'
 
-class Persons extends Component {
+class Persons extends PureComponent {
 	// adding all the lifecycle hooks
 	constructor(props){
 	    super(props); //you have to add super 
@@ -25,13 +25,15 @@ class Persons extends Component {
 		console.log("[UPDATE Persons.js] Inside componentWillReceiveProps ");
 	}
 
-	// if this fucntion returns True --> the state will update and the component will re-render
+	// if this function returns True --> the state will update and the component will re-render
 	// but if this return false --> state will not update and component wont render
 	// if false -- none of the eventhandlers that are looking to change the state of the component will work. 
-	shouldComponentUpdate(nextProps, nextState){
+	/*
+
+	  shouldComponentUpdate(nextProps, nextState){
 		console.log("[UPDATE Persons.js] Inside shouldComponentUpdate ", nextProps, nextState);
 		return true; //true;
-	}
+	}*/
 
 	componentWillUpdate(nextProps, nextState){
 		console.log("[UPDATE Persons.js] Inside componentWillUpdate ", nextProps, nextState);
