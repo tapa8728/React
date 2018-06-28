@@ -76,6 +76,22 @@ class App extends Component {
     console.log("[App.js] Inside componentDidMount ");
   }
 
+  // no need for componentWillRecieveProps() here because this is internal state change triggered updated
+  shouldComponentUpdate(nextProps, nextState){
+    console.log("[UPDATE App.js] Inside shouldComponentUpdate ", nextProps, nextState);
+    return true; //true;
+  }
+
+  componentWillUpdate(nextProps, nextState){
+    console.log("[UPDATE App.js] Inside componentWillUpdate ", nextProps, nextState);
+  }
+
+  componentDidUpdate(){
+    console.log("[UPDATE App.js] Inside componentDidUpdate ");
+
+  }
+
+
   // 'id' stands for the key property while rendering a react component
   state = {
     persons: [
