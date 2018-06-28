@@ -41,6 +41,8 @@ using CSS modules allows us to load the CSS file as a javsxript object and hence
 
 // Lifecycle Hooks order of call - Constructor, componentWillMount, render, componentDidMount
 
+// Lifecycle Hooks for updating a component - updates can be triggered by the parent or by the internal state change. 
+
 import React, { Component } from 'react';
 //import Radium, {StyleRoot} from 'radium';
 import classes from './App.css';
