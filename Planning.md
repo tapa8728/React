@@ -52,5 +52,6 @@ or stateful/class
 	Where should the state sit ? In which component. We will place it in the Burger Builder Component. 
 
 ## Burger-builder Folder Structure:
-	- Components (contains stateless/functional components)
-	- Containers (contains stateful/class components)
+	src/
+	  Components (contains stateless/functional components)
+	  Containers (contains stateful/class components)
