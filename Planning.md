@@ -1,8 +1,38 @@
 
 
-Planning a React App
-
+# Planning a React App
+-
 
 1. Component Structure/Tree  -  What functionality should be its own component. 
 
-2. 
+2. Application State/Data - What should the app data look like?
+
+3. Components vs containers - which components should be stateless/functional 
+or stateful/class 
+
+-
+
+# Burger Builder Application
+
+## Component Tree:
+	- App
+		- Layout
+			- Toolbar (fixed, will always show)
+				- Drawer toggle
+				- logo
+				- navigation items
+			- Side Drawer (fixed, will always show)
+			 	- navigation items (can be shared with toolbar)
+			 	- logo (can be shared with toolbar)
+			- Backdrop (fixed, will always show)
+				- html code.
+			- Footer (fixed, will always show)
+			- {props.children} : variable based on what we are rendering currently eg: Landing page, checkout page etc. 
+				- Burger Builder Page 
+
+
+	### Burger Builder Page:
+		This page is supposed to give us the build controls - where we add the ingredients to the burger : meat, salad, cheese, fries etc. and a checkout button. 
+			- Build Controls 
+			- Burger
+			- Modal 
