@@ -53,5 +53,11 @@ or stateful/class
 
 ## Burger-builder Folder Structure:
 	src/
-	  Components (contains stateless/functional components)
-	  Containers (contains stateful/class components)
+	  Components/ (contains stateless/functional components)
+	  	Layout/
+	  		Layout.js
+	  Containers/ (contains stateful/class components)
+	  	BurgerBuilder/
+	  		BurgerBuilder.js
+	  hoc/
+	  	Aux.js
