@@ -33,6 +33,11 @@ or stateful/class
 
 ## Burger Builder Page:
 	This page is supposed to give us the build controls - where we add the ingredients to the burger : meat, salad, cheese, fries etc. and a checkout button. 
-		- Build Controls 
+		- Build Controls: 
+				- build control 1, build control 2 ....
+				- order button 
 		- Burger
+				- Ingredients displayed controlled by the buildcontrols
 		- Modal 
+				- re-usable modal that takes {props.children}
+				Eg: Error message, confirmation message etc. 
