@@ -50,3 +50,7 @@ or stateful/class
 	- total_price : 12.99 
 
 	Where should the state sit ? In which component. We will place it in the Burger Builder Component. 
+
+## Burger-builder Folder Structure:
+	- Components (contains stateless/functional components)
+	- Containers (contains stateful/class components)
