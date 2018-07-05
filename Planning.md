@@ -31,7 +31,7 @@ or stateful/class
 				- Burger Builder Page 
 
 
-## Burger Builder Page:
+## Burger Builder Page: Stateful Component that holds the state. 
 	This page is supposed to give us the build controls - where we add the ingredients to the burger : meat, salad, cheese, fries etc. and a checkout button. 
 		- Build Controls: 
 				- build control 1, build control 2 ....
@@ -41,3 +41,12 @@ or stateful/class
 		- Modal 
 				- re-usable modal that takes {props.children}
 				Eg: Error message, confirmation message etc. 
+
+
+## State:
+	- Ingredients:
+		{ meat:1, cheese:2}
+	- purchased: true/false
+	- total_price : 12.99 
+
+	Where should the state sit ? In which component. We will place it in the Burger Builder Component. 
