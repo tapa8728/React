@@ -31,7 +31,7 @@ or stateful/class
 				- Burger Builder Page 
 
 
-## Burger Builder Page: Stateful Component that holds the state. 
+## Burger Builder Page: Stateful Component that holds the state. np
 	This page is supposed to give us the build controls - where we add the ingredients to the burger : meat, salad, cheese, fries etc. and a checkout button. 
 		- Build Controls: 
 				- build control 1, build control 2 ....
