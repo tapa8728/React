@@ -31,8 +31,8 @@ or stateful/class
 				- Burger Builder Page 
 
 
-	### Burger Builder Page:
-		This page is supposed to give us the build controls - where we add the ingredients to the burger : meat, salad, cheese, fries etc. and a checkout button. 
-			- Build Controls 
-			- Burger
-			- Modal 
+## Burger Builder Page:
+	This page is supposed to give us the build controls - where we add the ingredients to the burger : meat, salad, cheese, fries etc. and a checkout button. 
+		- Build Controls 
+		- Burger
+		- Modal 
