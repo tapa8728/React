@@ -1,10 +1,13 @@
 // represents a specific burger ingredient
 
-import React from 'react';
+import React, {Component} from 'react';
 import Aux from '../../hoc/Aux';
+import PropTypes from 'prop-types';
 import './BurgerIngredient.css';
 
-const burgerIngredient = (props) => (
+class BurgerIngredient extends Component {
+
+	render(){
 		/* There will be some logic inolved here because there are different types
 		of ingredients that need different css. We will expect an ingredient name
 		coming in at props.type */
@@ -13,7 +16,7 @@ const burgerIngredient = (props) => (
 
 		// based on the ingredient recieved in props.type, appropriate case (hence css)
 		// will be rendered. 
-		switch(props.type) {
+		switch(this.props.type) {
 			case('BreadBottom'):
 				ingredient = <div className={BreadBottom}></div>;
 				break;
@@ -41,7 +44,11 @@ const burgerIngredient = (props) => (
 
 		}
 		return ingredient;
-		
-	);
 
-export default burgerIngredient;
+	}
+
+BurgerIngredient.propTypes = {
+	type: PropTypes.string.isRequired
+}
+
+export default BurgerIngredient;
