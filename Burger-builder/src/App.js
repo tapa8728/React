@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <Layout>
-        <p> Test Component: but in actuality a page we actually want to display </p>
+        <p> Test Component</p>
         <BurgerBuilder />
       </Layout>
     );

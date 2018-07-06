@@ -2,16 +2,17 @@
 
 /*
 Aux: wrapped in a high-order Aux component
+Lets add some css margin between the main-area and toolbar.
 */
 
 import React from 'react';
 import Aux from '../../hoc/Aux';
-
+import './Layout.css'; 
 
 const layout = (props) => (
 	<Aux>
 		<div>Toolbar, Sidebar, Backdrop</div>
-		<main>
+		<main className="Content">
 			{props.children}
 		</main> 
 	</Aux>
