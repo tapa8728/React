@@ -2,12 +2,13 @@
 
 import React from 'react';
 import Aux from '../../hoc/Aux';
+import './Burger.css';
 
 const burger = (props) => (
-	<Aux>
+	<div className={Burger}>
 		// wrap the burger ingredients components here. 
 
-	</Aux>
+	</div>
 	);
 
 export default burger;
