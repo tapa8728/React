@@ -6,7 +6,7 @@ import React from 'react';
 
 import './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
-
+import BuildControls from './BuildControls/BuildControls';
 
 const Burger = (props) => {
 	let transformedIngredients = Object.keys( props.k )
