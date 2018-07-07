@@ -6,6 +6,14 @@ import Aux from '../../hoc/Aux';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 
+const INGREDIENT_PRICES = {
+	Salad:0.5,
+	Bacon:0.4,
+	Meat:1.3,
+	Cheese:0.7
+}
+
+
 class BurgerBuilder extends Component{
 
 	state = {
@@ -17,9 +25,17 @@ class BurgerBuilder extends Component{
 		}
 	};
 
+	addIngredientsHandler = (type) => {
+
+	}
+
+	removeIngredientsHandler = (type) => {
+		
+	}
+
 	render(){
 		return <Aux>
-			<p> hello BurgerBuilder! </p>
+			<p> hello BurgerB uilder! </p>
 			
 			<Burger k={this.state.ingredients}/>
 			<BuildControls />
