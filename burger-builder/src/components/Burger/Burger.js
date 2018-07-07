@@ -9,13 +9,24 @@ import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 
 const Burger = (props) => {
-	const transformedIngredients = Object.keys( props.k )
+	let transformedIngredients = Object.keys( props.k )
 	.map( igKey => {
 			return [...Array( props.k[igKey] )].map( (_,i)=>{
 				return <BurgerIngredient key={igKey + i} type={igKey} />
 			});
-	});
-	
+	})
+	.reduce((arr, el)=>{
+		return arr.concat(el)
+	}, []);
+
+	// check if burger ingredients have been chosen or not
+	if (transformedIngredients.length === 0){
+		transformedIngredients = <p> Please choose some ingredients! </p>
+	}
+	else{
+		console.log("here~");
+	}
+
 	return(
 		<div className="Burger">	
 			<BurgerIngredient type="BreadTop"></BurgerIngredient>
