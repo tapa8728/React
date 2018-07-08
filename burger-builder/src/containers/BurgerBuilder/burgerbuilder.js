@@ -28,9 +28,9 @@ class BurgerBuilder extends Component{
 	};
 
 	// toggles the purchasable property of the state
-	updatePurchaseState = () => {
+	updatePurchaseState = (updatedIngredients) => {
 		const igcopy = {
-			...this.state.ingredients
+			...updatedIngredients
 		};
 		const sum = Object.keys(igcopy)
 			.map(k => {
@@ -53,7 +53,7 @@ class BurgerBuilder extends Component{
 		const oldPrice = this.state.totalPrice;
 		const newPrice = oldPrice + priceAddition;
 		this.setState({ingredients: updatedIngredients, totalPrice: newPrice });
-		this.updatePurchaseState();
+		this.updatePurchaseState(updatedIngredients);
 	}
 
 	removeIngredientsHandler = (type) => {
@@ -70,7 +70,7 @@ class BurgerBuilder extends Component{
 		const oldPrice = this.state.totalPrice;
 		const newPrice = oldPrice - priceDeduction;
 		this.setState({ingredients: updatedIngredients, totalPrice: newPrice });
-		this.updatePurchaseState();
+		this.updatePurchaseState(updatedIngredients);
 	}
 
 	render(){
